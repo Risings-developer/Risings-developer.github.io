@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can I be your doggy?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #husky-gif {
+        max-width: 100%;
+        height: auto;
+    }
+    #question {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    #additional-question {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #e0e0e0;
+    }
+</style>
+</head>
+<body>
+    <iframe src="https://giphy.com/embed/h7KeaKKxlZntSEpU1d" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/tiktok-woof-happy-dog-excited-h7KeaKKxlZntSEpU1d">via GIPHY</a></p>    <div id="question">Can I be your doggy?</div>
+    <button id="yes-button" class="button" onclick="redirectToYesPage()">Yes</button>
+    <button id="no-button" class="button" onclick="changeNoButton()">No</button>
+
+    <script>
+        var clickCount = 0;
+
+        function redirectToYesPage() {
+            window.location.href = 'yes.html';
+        }
+
+        function changeNoButton() {
+            var noButton = document.getElementById('no-button');
+            clickCount++;
+
+            switch(clickCount) {
+                case 1:
+                    noButton.textContent = "Are you sure?";
+                    break;
+                case 2:
+                    noButton.textContent = "Please";
+                    break;
+                case 3:
+                    noButton.textContent = "C'mon";
+                    break;
+                case 4:
+                    noButton.textContent = "Shart dart fart";
+                    break;
+                case 5:
+                    noButton.textContent = "Yes";
+                    break;
+                default:
+                    redirectToYesPage();
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
